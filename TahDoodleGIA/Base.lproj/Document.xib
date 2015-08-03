@@ -6,7 +6,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="Document">
             <connections>
-                <outlet property="tasksTable" destination="SDF-Js-DEx" id="UUM-WU-bM0"/>
+                <outlet property="tasksTable" destination="SDF-Js-DEx" id="ioi-9c-0XL"/>
                 <outlet property="window" destination="xOd-HO-29H" id="JIz-fz-R2o"/>
             </connections>
         </customObject>
@@ -22,24 +22,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="507" height="413"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IC5-Ky-pUt">
-                        <rect key="frame" x="14" y="13" width="97" height="32"/>
-                        <buttonCell key="cell" type="push" title="Add Task" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dQM-XT-nC3">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="addTasks:" target="-2" id="Whd-Lp-hNw"/>
-                        </connections>
-                    </button>
                     <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCg-wl-QgT">
                         <rect key="frame" x="20" y="61" width="467" height="332"/>
                         <clipView key="contentView" id="Gcv-2Y-JVO">
                             <rect key="frame" x="1" y="17" width="238" height="117"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="8At-qn-dj5" viewBased="YES" id="SDF-Js-DEx">
-                                    <rect key="frame" x="0.0" y="0.0" width="238" height="117"/>
+                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="8At-qn-dj5" id="SDF-Js-DEx">
+                                    <rect key="frame" x="0.0" y="0.0" width="465" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -55,27 +45,11 @@
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                <connections>
+                                                    <action selector="deleteTasks:" target="-2" id="Frb-XS-bff"/>
+                                                </connections>
                                             </textFieldCell>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
-                                            <prototypeCellViews>
-                                                <tableCellView id="Gbd-Ir-B6l">
-                                                    <rect key="frame" x="1" y="1" width="462" height="17"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                    <subviews>
-                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BmJ-39-wqc">
-                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="17"/>
-                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="3If-6l-RWa">
-                                                                <font key="font" metaFont="system"/>
-                                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                            </textFieldCell>
-                                                        </textField>
-                                                    </subviews>
-                                                    <connections>
-                                                        <outlet property="textField" destination="BmJ-39-wqc" id="YoS-Xm-cdM"/>
-                                                    </connections>
-                                                </tableCellView>
-                                            </prototypeCellViews>
                                         </tableColumn>
                                     </tableColumns>
                                     <connections>
@@ -98,14 +72,36 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </tableHeaderView>
                     </scrollView>
+                    <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cur-U6-PVB" userLabel="Delete Task">
+                        <rect key="frame" x="392" y="13" width="101" height="32"/>
+                        <buttonCell key="cell" type="push" title="Delete Task" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Kcl-Ez-Bpr">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="deleteTasks:" target="-2" id="YKN-Xb-9LV"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IC5-Ky-pUt">
+                        <rect key="frame" x="14" y="13" width="97" height="32"/>
+                        <buttonCell key="cell" type="push" title="Add Task" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dQM-XT-nC3">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <connections>
+                                <action selector="addTasks:" target="-2" id="C8u-EJ-rLK"/>
+                            </connections>
+                        </buttonCell>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="IC5-Ky-pUt" secondAttribute="bottom" constant="20" id="KQn-hH-yeH"/>
                     <constraint firstAttribute="bottom" secondItem="xCg-wl-QgT" secondAttribute="bottom" constant="61" id="XUd-1r-tZQ"/>
+                    <constraint firstAttribute="trailing" secondItem="Cur-U6-PVB" secondAttribute="trailing" constant="20" id="e2R-FO-SYx"/>
                     <constraint firstItem="xCg-wl-QgT" firstAttribute="leading" secondItem="gIp-Ho-8D9" secondAttribute="leading" constant="20" id="f7m-BB-4eP"/>
                     <constraint firstItem="IC5-Ky-pUt" firstAttribute="leading" secondItem="gIp-Ho-8D9" secondAttribute="leading" constant="20" id="n8s-ax-uTy"/>
                     <constraint firstItem="xCg-wl-QgT" firstAttribute="top" secondItem="gIp-Ho-8D9" secondAttribute="top" constant="20" id="nUN-6y-uel"/>
                     <constraint firstAttribute="trailing" secondItem="xCg-wl-QgT" secondAttribute="trailing" constant="20" id="p1H-xe-6Kq"/>
+                    <constraint firstAttribute="bottom" secondItem="Cur-U6-PVB" secondAttribute="bottom" constant="20" id="r47-3l-Yaa"/>
                 </constraints>
             </view>
             <connections>

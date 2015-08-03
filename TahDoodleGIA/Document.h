@@ -12,7 +12,9 @@
     <NSTableViewDataSource>
 @property (nonatomic) NSMutableArray *tasks;
 @property (nonatomic) IBOutlet NSTableView *tasksTable;
+@property (nonatomic, readonly) NSInteger clickedRow;
 - (IBAction)addTasks:(id)sender;
+- (IBAction)deleteTasks:(id)sender;
 
 @end
 
